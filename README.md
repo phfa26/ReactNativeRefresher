@@ -4,5 +4,5 @@ This is a refresher for React Native.
 
 ## First project - Goals App:
 
-- ![goals](./Project1/assets/images/Android.png)
-- ![goals](./Project1/assets/images/iOS.png)
+- <img src="./Project1/assets/images/Android.png" alt="Android example" width="200"/>
+- <img src="./Project1/assets/images/iOS.png" alt="iOS example" width="200"/>
