@@ -1,4 +1,5 @@
 import {
+	Pressable,
 	StyleSheet,
 	Text,
 	View,
@@ -6,10 +7,21 @@ import {
 
 const GoalItem = ( props ) =>
 { 
-    return (
-        <View style={ styles.goalItem }>
-		    <Text style={styles.goalItemText}>{props.item}</Text>
-        </View>
+	const handleDeleteItem = () =>
+	{
+		props.onDeleteItem( props.itemData.index);
+	}
+
+	return (
+		<View style={ styles.goalItem }>
+			<Pressable
+				android_ripple={ { color: '#210644' } }
+				onPress={ handleDeleteItem }
+				style={(pressedData) => pressedData.pressed && styles.pressableItem}
+			>
+		    	<Text style={styles.goalItemText}>{props.itemData.item}</Text>
+			</Pressable>
+		</View>
     );
 };
 
@@ -17,11 +29,14 @@ const GoalItem = ( props ) =>
 const styles = StyleSheet.create({
 	goalItem: {
 		margin: 8,
-		padding: 8,
 		borderRadius: 6,
 		backgroundColor: "#5e0acc",
 	},
+	pressableItem: {
+		opacity: 0.5,
+	},
 	goalItemText: {
+		padding: 8,
 		color: "white",
 	},
 });
